@@ -2,7 +2,7 @@
   position: relative;
   top: 10vh;
   border: 2px solid cyan;
-  width: 15vw;
+  width: 400px;
   padding: 10px;
   margin: auto;
 }
@@ -13,4 +13,8 @@
 
 td {
   padding: 10px;
+}
+
+button {
+  width: 100%;
 }

@@ -1,20 +1,39 @@
-#calculator{
-  position: relative;
-  top: 10vh;
-  border: 2px solid cyan;
+body {
+  background: white;
+  background: radial-gradient(circle, #fff 20%, #ccc);
+  background-size: cover;
+}
+
+.main-cont {
+  font-size: 15px;
+  border-radius: 10px;
   width: 400px;
-  padding: 10px;
-  margin: auto;
+  top: 10vh;
+  background: #9dd2ea;
+  background: linear-gradient(#9dd2ea, #8bceec);
+  box-shadow: 0px 4px #009de4, 0px 10px 15px rgba(0, 0, 0, 0.2);
 }
 
-.twarda{
-  display: none;
+h2 {
+  color: white;
+  letter-spacing: 5px;
 }
 
-td {
+.row {
   padding: 10px;
 }
 
 button {
-  width: 100%;
+  border-radius: 10px;
+  padding: 5px 20px 5px 20px;
+  background: white;
+  border-radius: 3px;
+  box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+  color: #666;
+ }
+
+#hardcoverPart {
+  display: none;
 }
+

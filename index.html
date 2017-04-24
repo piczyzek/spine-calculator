@@ -1,101 +1,46 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Kalkulator grubości grzbietu</title>
-</head>
-
-<body>
-  <div id="calculator">
-    <table>
-      <tbody>
-        <tr colspan="2"><h3>KALKULATOR GRUBOŚCI GRZBIETU</h3></tr>
-        <tr>
-          <td>
-            rodzaj materiału
-          </td>
-          <td>
-            <select id="paper_type" size="1">
-              <option>Wybierz rodzaj materiału</option>
-                <optgroup label="OFFSET">
-                  <option value="1">80g</option>
-                  <option value="2">90g</option>
-                  <option value="3">100g</option>
-                  <option value="4">110g</option>
-                </optgroup>
-                <optgroup label="KREDA MAT">
-                  <option value="5">80g</option>
-                  <option value="6">90g</option>
-                  <option value="7">100g</option>
-                  <option value="8">110g</option>
-                </optgroup>
-                <optgroup label="KREDA BŁYSK">
-                  <option value="9">80g</option>
-                  <option value="9">90g</option>
-                  <option value="10">100g</option>
-                  <option value="11">110g</option>
-                </optgroup>
-            </select>    
-          </td>
-        </tr>
-        <tr>
-          <td>
-            ilość stron
-          </td>
-          <td>
-            <input id="stron" placeholder="0" type="number" name="quantity" min="2">
-          </td>
-        </tr>
-        <tr>
-          <td>
-            oprawa twarda
-          </td>
-          <td>
-            <input type="checkbox" id="check">
-          </td>
-         </tr>
-          <tr class="twarda">
-          <td>
-            grzbiet
-          </td>
-          <td>
-            <form>
-              <input type="radio" name="spine" value="round"> zaokrąglony
-              <input type="radio" name="spine" value="straight"> prosty
-            </form> 
-          </td>
-         </tr>
-        <tr class="twarda">
-          <td>
-            grubość tektury
-          </td>
-          <td>
-            <input value="0" disabled>
-          </td>
-        </tr>
-        <tr>
-           <td>
-            GRUBOŚĆ KARTKI
-          </td>
-          <td>
-            
-          </td>
-        </tr>
-        <tr>
-          <td>
-            GRUBOŚĆ GRZBIETU
-          </td>
-          <td>
-            
-          </td>
-        </tr>
-      </tbody>
-    </table>
-             <button>oblicz</button>
- 
-  </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script src="script.js"></script>
-</body>
-</html>
+.container.main-cont
+  form(onsubmit="return countOnSubmit(this);")
+    .row
+      .col-sm-12.text-center
+        h2 SPINE WIDTH CALCULATOR
+    .row
+      label.col-sm-6.control-label material
+      .col-sm-6
+        select.form-control#material
+          option(value="98") offset 80g
+          option(value="110") offset 90g
+    .row
+      label.col-sm-6.control-label page count
+      .col-sm-6
+        input.form-control#pageCount
+    .row
+      label.col-sm-6.control-label hardcover
+      .col-sm-6
+        input.form-control#checkBox(type="checkbox" onchange="checkBoxOnChange()")
+     
+    div#hardcoverPart
+      .row
+        label.col-sm-6.control-label spine type
+        .col-sm-3
+          label.radio-inline
+            input#inlineRadio1(type='radio', name='inlineRadioOptions', value='round')
+            | round
+        .col-sm-3  
+          label.radio-inline
+            input#inlineRadio2(type='radio', name='inlineRadioOptions', value='straight')
+            | straight
+      .row
+        label.col-sm-6.control-label paperboard type
+        .col-sm-6
+          input.form-control#paperboard
+        
+    .row
+      label.col-sm-6.control-label spine width
+      .col-sm-6
+        div
+          span#tag 0 
+          | mm
+        
+    .row
+      .col-sm-12.text-center
+        button.btn(type="submit") Click
